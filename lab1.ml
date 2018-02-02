@@ -191,14 +191,11 @@ can raise an appropriate exception -- a Match_failure or
 Invalid_argument exception for instance.
 ......................................................................*)
 
-let max_list (lst : int list) : int =
-  failwith "max_list not implemented" ;;
-
 let rec max_list (lst : int list) : int =
   match lst with
    [] -> raise (Invalid_argument "Nope")
   | head :: _ -> head
-  | head :: tail -> max head (max_list tail);;
+  | head :: tail -> Pervasives.max (head, (max_list tail));;
 
 (*......................................................................
 Exercise 9: Define a function zip, that takes two int lists and
