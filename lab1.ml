@@ -197,7 +197,7 @@ let max_list (lst : int list) : int =
 let rec max_list (lst : int list) : int =
   match lst with
    [] -> 0
-  | head :: tail -> if (head > max_list tail) then head else tail;;
+  | head :: tail -> if (head > (max_list tail)) then head else tail;;
 
 (*......................................................................
 Exercise 9: Define a function zip, that takes two int lists and
