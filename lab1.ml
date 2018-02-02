@@ -195,7 +195,7 @@ let rec max_list (lst : int list) : int =
   match lst with
    [] -> raise (Invalid_argument "Nope")
   | head :: _ -> head
-  | head :: tail -> Pervasives.max (head, (max_list tail));;
+  | head1 :: tail -> max head1 (max_list tail);;
 
 (*......................................................................
 Exercise 9: Define a function zip, that takes two int lists and
