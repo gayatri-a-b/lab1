@@ -181,7 +181,7 @@ list. (What's a sensible return value for the empty list?)
 
 let rec sum (lst : int list) : int =
   match lst with
-  	[] -> raise Invalid_argument
+  	[] -> 0
   | head :: tail -> head + sum tail ;;
   
 (*......................................................................
@@ -196,7 +196,7 @@ let max_list (lst : int list) : int =
 
 let rec max_list (lst : int list) : int =
   match lst with
-   [] -> 
+   [] -> raise Invalid_argument
   | head :: tail -> if (head >= (max_list tail)) then head else (max_list tail);;
 
 (*......................................................................
