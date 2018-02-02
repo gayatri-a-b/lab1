@@ -179,9 +179,6 @@ Exercise 7: Define a recursive function that sums an integer
 list. (What's a sensible return value for the empty list?)
 ......................................................................*)
 
-let sum (lst : int list) : int =
-  failwith "sum not implemented" ;;
-
 let rec sum (lst : int list) : int =
   match lst with
   	[] -> 0
@@ -196,6 +193,11 @@ Invalid_argument exception for instance.
 
 let max_list (lst : int list) : int =
   failwith "max_list not implemented" ;;
+
+let rec max_list (lst : int list) : int =
+  match lst with
+   [] -> Match_failure
+  | head :: tail -> if (head > max_list tail) then head else tail;;
 
 (*......................................................................
 Exercise 9: Define a function zip, that takes two int lists and
